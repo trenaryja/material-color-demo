@@ -10,7 +10,7 @@
 	margin: 1.5em;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none;
 }
 
@@ -27,6 +27,7 @@ pre {
 	margin: 0.5em 0;
 	overflow: auto;
 	position: relative;
+	max-height: 40em;
 }
 
 :not(pre) > code {

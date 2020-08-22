@@ -1,14 +1,16 @@
 import React from "react";
 import chroma from "chroma-js";
 import * as materialColor from "@trenaryja/material-color";
-import { TextField } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
 import JsonBlock from "./jsonBlock";
 import ColorArray from "./colorArray";
 import InfoTable from "./infoTable";
+import PaletteTable from "./paletteTable";
 import { theme } from "./utils";
 
 export default () => {
 	const [color, setColor] = React.useState(theme.palette.primary.main);
+
 	const closestValues = materialColor.getClosestMaterialColorValues(color);
 	const colorArray = materialColor.createColorArray(color);
 	const colorObject = materialColor.createColorObject(color);
@@ -24,6 +26,7 @@ export default () => {
 			<ColorArray value={colorArray}></ColorArray>
 			<InfoTable value={closestValues}></InfoTable>
 			<JsonBlock value={colorObject}></JsonBlock>
+			<PaletteTable></PaletteTable>
 		</div>
 	);
 };
